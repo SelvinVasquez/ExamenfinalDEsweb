@@ -21,7 +21,7 @@ class AddTaskActivity : TaskActivity() {
         super.onCreate(savedInstanceState)
         val root = screen("Nueva tarea", "Escribe el pendiente que necesitas recordar")
         val input = EditText(this).apply {
-            id = 1001; hint = "Descripción de la tarea"; minLines = 3; maxLines = 8
+            id = R.id.task_description; hint = "Descripción de la tarea"; minLines = 3; maxLines = 8
             gravity = android.view.Gravity.TOP
             inputType = android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE or android.text.InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
             filters = arrayOf(android.text.InputFilter.LengthFilter(1000))
@@ -35,5 +35,6 @@ class AddTaskActivity : TaskActivity() {
         root.addView(button("Cancelar y volver") { finish() })
     }
 }
+
 
 

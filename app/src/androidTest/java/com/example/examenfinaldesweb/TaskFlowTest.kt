@@ -21,8 +21,8 @@ class TaskFlowTest {
         try {
             onView(withText("+ Agregar tarea")).perform(click())
             onView(withText("Guardar tarea")).perform(click())
-            onView(withId(1001)).check(matches(hasErrorText("Escribe una descripción")))
-            onView(withId(1001)).perform(typeText("Preparar informe"), closeSoftKeyboard())
+            onView(withId(R.id.task_description)).check(matches(hasErrorText("Escribe una descripción")))
+            onView(withId(R.id.task_description)).perform(typeText("Preparar informe"), closeSoftKeyboard())
             onView(withText("Guardar tarea")).perform(click())
             onView(withText("Preparar informe\nPendiente")).perform(click())
             onView(withText("Detalle de tarea")).check(matches(isDisplayed()))
@@ -39,3 +39,4 @@ class TaskFlowTest {
         } finally { activity.finish() }
     }
 }
+
